@@ -26,7 +26,7 @@ You will need:
 Download code
 
 ```bash
-git clone https://github.com/Thoq-jar/Adblitorator.git
+git clone https://github.com/Thoq-jar/Adbliterator.git
 ```
 
 Enter the directory
