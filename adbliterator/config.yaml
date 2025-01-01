@@ -1,0 +1,19 @@
+---
+## Welcome to the Adblitorator config file™
+# This file contains settings for Adblitorator.
+# This file is written in YAML, to learn more about YAML,
+# visit: https://learnxinyminutes.com/yaml/
+##
+
+### +-+-+-+-+-+-+-+ SETTINGS +-+-+-+-+-+-+-+ ###
+SETTINGS:
+  # 'debug' will log everything, *can* reduce performance but
+  # will show requests being blocked in realtime
+  # and will help figure out issues if you are having any
+  debug: false
+
+  # 'default' will tell Adblitorator whether to display
+  # a message on how to configure it at boot
+  # To silence the messages change 'true' to 'false'
+  default: true
+...

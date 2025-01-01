@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ ! -d ".venv" ]; then
+  ./bin/bootstrap
+fi
+
+python src/adbliterator.py
