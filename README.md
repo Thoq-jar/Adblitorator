@@ -10,11 +10,11 @@ This uses the [MITM](https://mitmproxy.org) proxy library.
 You may need to install the
 certificate for [MITM](https://mitmproxy.org).
 
-To do so follow the instructions at: [mitm.it](https://mitm.it).
+To do so, follow the instructions at: [mitm.it](https://mitm.it).
 
 There will be an automated installer in the future.
 
-To access the site you may need to run the proxy!
+To access the site, you may need to run the proxy!
 
 Speaking of running:
 
@@ -41,7 +41,7 @@ Install dependencies
 bin/bootstrap
 ```
 
-Run Adblitorator
+Run Adbliterator
 
 ```bash
 bin/run
