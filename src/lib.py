@@ -6,8 +6,11 @@ Adbliterator.py: The library for Adbliterator.
 
 import logging
 import os
+
 import pyfiglet
 import yaml
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 def load_yaml(file_path):
@@ -15,9 +18,8 @@ def load_yaml(file_path):
         return yaml.safe_load(file)
 
 
-script_dir = os.path.dirname(os.path.abspath(__file__))
-config = load_yaml(os.path.join(script_dir, '../adbliterator/ad_list.yaml'))
-settings = load_yaml(os.path.join(script_dir, '../adbliterator/config.yaml'))
+config = load_yaml(os.path.join(SCRIPT_DIR, '../adbliterator/ad_list.yaml'))
+settings = load_yaml(os.path.join(SCRIPT_DIR, '../adbliterator/config.yaml'))
 
 BANNER = pyfiglet.figlet_format("Adbliterator", font="fire_font-s")
 

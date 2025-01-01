@@ -4,19 +4,22 @@ Adbliterator.py: The service(s) for Adbliterator.
 @since: December 31st, 2024
 """
 
+import os
 import re
 
 from mitmproxy import http
 
-from lib import (AD_KEYWORDS,
-                 KNOWN_PATHS,
-                 KNOWN_HOSTS,
-                 FLASH_EXTENSIONS,
-                 FLASH_MIME_TYPES,
-                 SETTINGS,
-                 write_log)
+from adbliterator import STATE_FILE
+from lib import (AD_KEYWORDS, KNOWN_PATHS,
+                 KNOWN_HOSTS, FLASH_EXTENSIONS,
+                 FLASH_MIME_TYPES, write_log)
 
-debug = SETTINGS.get("debug", False)
+
+def get_blocking_state():
+    if not os.path.exists(STATE_FILE):
+        return True
+    with open(STATE_FILE, 'r') as file:
+        return file.read().strip() == "enabled"
 
 
 def parse_html(html_content):
@@ -38,6 +41,9 @@ def parse_html(html_content):
 
 
 def request(flow: http.HTTPFlow) -> None:
+    if not get_blocking_state():
+        return
+
     for keyword in AD_KEYWORDS:
         if keyword in flow.request.url:
             write_log(f"Blocked Ad Request: {flow.request.url}")
@@ -63,6 +69,9 @@ def request(flow: http.HTTPFlow) -> None:
 
 
 def response(flow: http.HTTPFlow) -> None:
+    if not get_blocking_state():
+        return
+
     if any(mime in flow.response.headers.get("Content-Type", "") for mime in FLASH_MIME_TYPES):
         write_log(f"Blocked Flash Response: {flow.request.pretty_url}")
         flow.kill()

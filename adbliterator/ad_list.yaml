@@ -12,18 +12,12 @@
 # Keywords related to advertisements or tracking mechanisms,
 # used to identify ads for filtering or blocking purposes.
 AD_KEYWORDS:
-  # - adserver # RISKY
-  # - ads # RISKY
-  # - advertisement # RISKY
   - doubleclick
   - googlesyndication
-  #  - analytics # RISKY
   - tracking
   - metrics
   - errorcatcher
   - whitematchmarketing
-  # - adservice # RISKY
-  # - admanager # RISKY
   - bannerads
   - clicktrack
   - promotions
@@ -34,6 +28,12 @@ AD_KEYWORDS:
   - youtube.com/ads
   - youtube.com/get_midroll_info
   - youtube.com/api/stats/ads
+  - adserver
+  - advertisement
+  # - ads
+  # - adservice # RISKY
+  # - admanager # RISKY
+  # - analytics # RISKY
 
 ### +-+-+-+-+-+-+-+ HOSTNAMES +-+-+-+-+-+-+-+ ###
 # List of hostnames that are associated with tracking, analytics,
@@ -69,6 +69,12 @@ KNOWN_HOSTS:
   - pagead2.googlesyndication.com
   - googleads.g.doubleclick.net
   - youtubei.googleapis.com
+  - ymatuhin.ru
+  - bat.bing.com
+  - ads.microsoft.com
+  - browser.pipe.aria.microsoft.com
+  - adsuxprodfd-awb5gsddabddbqgv.z01.azurefd.net
+  - resources-bingadsms.azureedge.net
 
 ### +-+-+-+-+-+-+-+ URL PATHS +-+-+-+-+-+-+-+ ###
 # Common URL paths or files loaded by websites to deliver ads,
@@ -84,8 +90,18 @@ KNOWN_PATHS:
   - /pixel.gif
   - /conversion.js
   - /events.js
-  - .swf
   - /get_midroll_info
+  - /_/mss/boq-search
+  - /gen
+  - /pagead
+  - /tr
+  - /fbevents.js
+  - /privacy_sandbox
+  - /p/insights
+  - /Collector/3.0
+  - /external
+  - .gif # RISKY (but enabled)
+  - .png # RISKY (but enabled)
 
 ### +-+-+-+-+-+-+-+ FLASH EXTENSIONS +-+-+-+-+-+-+-+ ###
 # File extensions specific to Adobe Flash content,
