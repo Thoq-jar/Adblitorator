@@ -100,8 +100,8 @@ KNOWN_PATHS:
   - /p/insights
   - /Collector/3.0
   - /external
-  - .gif # RISKY (but enabled)
-  - .png # RISKY (but enabled)
+  # - .gif # RISKY
+  # - .png # RISKY
 
 ### +-+-+-+-+-+-+-+ FLASH EXTENSIONS +-+-+-+-+-+-+-+ ###
 # File extensions specific to Adobe Flash content,
